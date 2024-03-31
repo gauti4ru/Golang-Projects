@@ -1,9 +1,19 @@
-#URL Reducer Service 
+# URL Reducer Service
 
-##Description
-1- There are two different methods available for one service 
-    end point(/url)
-2- Post is to get the data for a short url which is getting passed in body of the request.
-   `curl -X POST -d 'shorturl' http://localhost:8081/url`
-3- Get is to fetch the short url from the service if,that short url is available in the map.
-    `curl -X  GET 'http://localhost:8081/url?url=longurl'`
+## Description
+
+This service provides two different methods for the same endpoint (`/url`):
+
+1. **POST**: Use this method to retrieve data for a short URL provided in the body of the request.
+   
+    Example:
+    ```bash
+    curl -X POST -d 'shorturl' http://localhost:8081/url
+    ```
+
+2. **GET**: Use this method to fetch the short URL from the service if the corresponding long URL is available in the map.
+
+    Example:
+    ```bash
+    curl -X GET 'http://localhost:8081/url?url=longurl'
+    ```
