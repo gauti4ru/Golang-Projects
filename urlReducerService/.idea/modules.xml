@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/urlReducerService.iml" filepath="$PROJECT_DIR$/.idea/urlReducerService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../urlReducerService/.idea/urlReducerService.iml" filepath="$PROJECT_DIR$/../urlReducerService/.idea/urlReducerService.iml" />
     </modules>
   </component>
 </project>
