@@ -1,10 +1,10 @@
 package main
 
 import (
-	"awesomeProject/controller"
 	"io"
 	"net/http"
 	"sync"
+	"urlReduceService/controller"
 )
 
 var (
@@ -26,7 +26,7 @@ func handle(writer http.ResponseWriter, request *http.Request) {
 	if request.Method == "POST" {
 		url, _ := io.ReadAll(request.Body)
 		longurl := urlMapper.Post(string(url))
-		_, err := writer.Write([]byte("localhost:8081/" + longurl))
+		_, err := writer.Write([]byte(longurl))
 		if err != nil {
 			return
 		}
@@ -34,9 +34,8 @@ func handle(writer http.ResponseWriter, request *http.Request) {
 
 		value := request.URL.Query().Get("url")
 		shorturl := urlMapper.LongShortMap[value]
-		writer.Header().Set("Location", "localhost:8081/"+shorturl)
-
-		writer.WriteHeader(300)
+		writer.Header().Set("Location", shorturl)
+		writer.WriteHeader(301)
 
 	}
 }
